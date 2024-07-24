@@ -58,6 +58,22 @@
                     <Entry Grid.Row="1" Grid.Column="1" Placeholder="Tip as percent" Style="{StaticResource NumericEntry}" Text="{Binding TipRate}" />
                 </Grid>
             </Frame>
+            <Frame BackgroundColor="#8888d2ec">
+                <Grid Style="{StaticResource NumericGrid}">
+                    <Label Style="{StaticResource NumericLabel}" Text="Tip" />
+                    <Label Grid.Column="1" Style="{StaticResource NumericEntry}" Text="{Binding Tip, StringFormat='{0:C}'}" />
+                    <Label Grid.Row="1" Style="{StaticResource NumericLabel}" Text="Total" />
+                    <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource NumericEntry}" Text="{Binding Total, StringFormat='{0:C}'}" />
+                </Grid>
+            </Frame>
+            <Frame BackgroundColor="#8888d2ec">
+                <Grid RowDefinitions="Auto,*" Style="{StaticResource NumericGrid}">
+                    <Label Style="{StaticResource NumericLabel}" Text="# of people" />
+                    <Picker x:Name="NumberOfPeople" Grid.Column="1" SelectedIndexChanged="NumberOfPeople_SelectedIndexChanged" Style="{StaticResource NumericPicker}" />
+                    <Label Grid.Row="1" Style="{StaticResource NumericLabel}" Text="Each pays" />
+                    <Label Grid.Row="1" Grid.Column="1" Style="{StaticResource NumericEntry}" Text="{Binding PersonalAmount, StringFormat='{0:C}'}" />
+                </Grid>
+            </Frame>
         </VerticalStackLayout>
     </ScrollView>
 
